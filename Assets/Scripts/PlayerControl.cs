@@ -11,12 +11,19 @@ public class PlayerControl : MonoBehaviour
 
     private Vector3 moveDirection = Vector3.zero;
 
+    public GameObject Player;
+    public GameObject Camera;
+    private Transform PlayerTransform;
+    private Transform CameraTransform;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        PlayerTransform = transform.parent;
+        CameraTransform = GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -35,22 +42,37 @@ public class PlayerControl : MonoBehaviour
         moveDirection.y -= gravity * Time.deltaTime;
         characterController.Move(moveDirection * Time.deltaTime);
 
+        CameraRotationMouseControl();
 
-            //if (Input.GetKey(KeyCode.W))
-            //{
-            //    transform.position += transform.forward * speed * Time.deltaTime;
-            //}
-            //if (Input.GetKey(KeyCode.S))
-            //{
-            //    transform.position -= transform.forward * speed * Time.deltaTime;
-            //}
-            //if (Input.GetKey(KeyCode.D))
-            //{
-            //    transform.position += transform.right * speed * Time.deltaTime;
-            //}
-            //if (Input.GetKey(KeyCode.A))
-            //{
-            //    transform.position -= transform.right * speed * Time.deltaTime;
-            //}
-        }
+
+        //if (Input.GetKey(KeyCode.W))
+        //{
+        //    transform.position += transform.forward * speed * Time.deltaTime;
+        //}
+        //if (Input.GetKey(KeyCode.S))
+        //{
+        //    transform.position -= transform.forward * speed * Time.deltaTime;
+        //}
+        //if (Input.GetKey(KeyCode.D))
+        //{
+        //    transform.position += transform.right * speed * Time.deltaTime;
+        //}
+        //if (Input.GetKey(KeyCode.A))
+        //{
+        //    transform.position -= transform.right * speed * Time.deltaTime;
+        //}
+    }
+
+    public void CameraRotationMouseControl()
+    {
+        float X_Rotation = Input.GetAxis("Mouse X");
+        float Y_Rotation = Input.GetAxis("Mouse Y");
+        PlayerTransform.transform.Rotate(0, X_Rotation, 0);
+        CameraTransform.transform.Rotate(-Y_Rotation, 0, 0);
+
+
+        float angleDir = PlayerTransform.transform.eulerAngles.y * (Mathf.PI / 180.0f);
+        Vector3 dir1 = new Vector3(Mathf.Sin(angleDir), 0, Mathf.Cos(angleDir));
+        Vector3 dir2 = new Vector3(-Mathf.Cos(angleDir), 0, Mathf.Sin(angleDir));
+    }
 }
