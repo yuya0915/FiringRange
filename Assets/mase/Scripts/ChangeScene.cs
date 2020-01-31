@@ -19,5 +19,10 @@ public class ChangeScene : MonoBehaviour
             SceneManager.LoadScene("main");
             Debug.Log("移動");
         }
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            SceneManager.LoadScene("Result");
+        }
     }
 }
