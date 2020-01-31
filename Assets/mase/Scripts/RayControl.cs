@@ -23,7 +23,7 @@ public class RayControl : MonoBehaviour
             if (Physics.Raycast(camera_obj.transform.position,transform.forward,out hit,5))
             {
                 Destroy(hit.collider.gameObject);
-                Debug.Log("ヒット");
+                Debug.DrawRay(camera_obj.transform.position, transform.forward, Color.blue);
             }
         }
 
