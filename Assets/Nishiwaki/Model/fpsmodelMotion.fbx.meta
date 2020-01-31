@@ -1,14 +1,14 @@
 fileFormatVersion: 2
-guid: f78c3ada49b8b0940bae1cc32030becf
+guid: da7ab7a2276a6694b90d454f42bf7b19
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable:
   - first:
-      74: 2207775902422111099
-    second: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|Banzai"
+      74: -5630266692822762077
+    second: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|M4A1Idle"
   - first:
-      74: 6592537974471864964
-    second: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|waiting"
+      74: -512532871383458457
+    second: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|M4A1Reload"
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -38,11 +38,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|Banzai"
-      takeName: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|Banzai"
-      internalID: 2207775902422111099
+      name: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|M4A1Idle"
+      takeName: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|M4A1Idle"
+      internalID: -5630266692822762077
       firstFrame: 0
-      lastFrame: 10
+      lastFrame: 5
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -67,11 +67,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|waiting"
-      takeName: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|waiting"
-      internalID: 6592537974471864964
+      name: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|M4A1Reload"
+      takeName: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|M4A1Reload"
+      internalID: -512532871383458457
       firstFrame: 0
-      lastFrame: 10
+      lastFrame: 59
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
