@@ -10,7 +10,7 @@ public class RayControl : MonoBehaviour
     private RaycastHit hit;//レイが当たったモノを取得
 
     public Text Hittext;//テキスト
-    public float HitCount;//当たったカウント
+    public int HitCount;//当たったカウント
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +32,8 @@ public class RayControl : MonoBehaviour
                 Debug.DrawRay(camera_obj.transform.position, transform.forward, Color.blue);
             }
         }
+
+        Hittext.text = HitCount.ToString();
 
     }
 }
