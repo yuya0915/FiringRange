@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Fire
   - Ground
+  - Target
+  - Start
+  - Goal
   layers:
   - Default
   - TransparentFX

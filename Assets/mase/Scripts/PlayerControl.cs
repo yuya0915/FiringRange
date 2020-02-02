@@ -17,7 +17,8 @@ public class PlayerControl : MonoBehaviour
     private Transform CameraTransform;
     public float speed;
     private float ii;
-
+    AudioSource audioSource;
+    public AudioClip audio;
 
 
     // Start is called before the first frame update
@@ -28,6 +29,7 @@ public class PlayerControl : MonoBehaviour
         //CameraTransform = GetComponent<Transform>();
         PlayerTransform = transform.parent;
         CameraTransform = GetComponent<Transform>();
+        audioSource =this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -67,20 +69,41 @@ public class PlayerControl : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            PlayerTransform.transform.position += dir1 * speed * Time.deltaTime;
 
+            audioSource.Play();
+            PlayerTransform.transform.position += dir1 * speed * Time.deltaTime;
+        }
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            audioSource.Stop();
+        }
+        if (Input.GetKey(KeyCode.W)&&Input.GetKey(KeyCode.LeftShift))
+        {
+            PlayerTransform.transform.position += dir1 * speed * 1.5f* Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.A))
         {
             PlayerTransform.transform.position += dir2 * speed * Time.deltaTime;
         }
+        if (Input.GetKey(KeyCode.A)&&Input.GetKey(KeyCode.LeftShift))
+        {
+            PlayerTransform.transform.position += dir2 * speed *1.5f* Time.deltaTime;
+        }
         if (Input.GetKey(KeyCode.D))
         {
             PlayerTransform.transform.position += -dir2 * speed * Time.deltaTime;
         }
+        if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift))
+        {
+            PlayerTransform.transform.position += -dir2 * speed *1.5f* Time.deltaTime;
+        }
         if (Input.GetKey(KeyCode.S))
         {
             PlayerTransform.transform.position += -dir1 * speed * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.LeftShift))
+        {
+            PlayerTransform.transform.position += -dir1 * speed *1.5f* Time.deltaTime;
         }
 
         //if (characterController.isGrounded)
